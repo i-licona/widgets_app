@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String name = 'home_screen';
   const HomeScreen({super.key});
 
   @override
@@ -18,9 +19,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _HomeView extends StatelessWidget {
-  const _HomeView({
-    super.key,
-  });
+  const _HomeView();
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +54,7 @@ class _CustomListTitle extends StatelessWidget {
           ),
         ); */
         //Navigator.pushNamed(context, menuItem.link);
-        context.push(menuItem.link);
+        context.pushNamed(menuItem.link);
       },
     );
   }
