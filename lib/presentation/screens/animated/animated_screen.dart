@@ -6,6 +6,31 @@ class AnimatedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final colors = Theme.of(context).colorScheme;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Container animated'),
+      ),
+      body: Center(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(20)
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: colors.primary,
+        child: const Icon(
+          Icons.play_arrow_rounded,
+          color: Colors.white,
+        ),
+      ),
+    );
   }
 }
