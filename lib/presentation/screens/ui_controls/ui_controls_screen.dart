@@ -6,6 +6,27 @@ class UIControlsAnimatedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('UI Controls'),
+      ),
+      body: _UIControlsView(),
+    );
+  }
+}
+
+class _UIControlsView extends StatelessWidget {
+  const _UIControlsView();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      physics: const ClampingScrollPhysics(),
+      children: [
+        SwitchListTile(value: false, onChanged: (value){
+
+        })
+      ],
+    );
   }
 }
