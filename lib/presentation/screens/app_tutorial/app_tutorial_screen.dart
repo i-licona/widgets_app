@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -73,9 +74,13 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
           Positioned(
             bottom: 40,
             right: 20,
-            child: FilledButton(
-              child: const Text('Comenzar'),
-              onPressed: () => context.pop(),
+            child: FadeInRight(
+              from: 15,
+              delay: const Duration(seconds: 1),
+              child: FilledButton(
+                child: const Text('Comenzar'),
+                onPressed: () => context.pop(),
+              ),
             ),
           ): const SizedBox()
         ],
