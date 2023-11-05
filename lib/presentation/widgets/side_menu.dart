@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/menu/menu_item.dart';
 
 class SideMenu extends StatefulWidget {
 
@@ -13,19 +16,24 @@ class _SideMenuState extends State<SideMenu> {
 
   @override
   Widget build(BuildContext context) {
+    final hasNotch = MediaQuery.of(context).viewPadding.top > 35;
+    
     return NavigationDrawer(
       selectedIndex: navDrawerIndex,
       onDestinationSelected: (value){
         navDrawerIndex = value;
         setState(() {});
       },
-      children: const [
+      children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(28, 20, 16, 10),
+          padding: EdgeInsets.fromLTRB(28, hasNotch ? 10 : 20, 16, 10),
+          child: const Text('Main menu',)
         ),
-        NavigationDrawerDestination(icon: Icon(Icons.add), label: Text('Home Screen')),
-        NavigationDrawerDestination(icon: Icon(Icons.add), label: Text('Home Screen'))
-
+        //barrer los menu items
+        ...appMenuItems.map((item) => NavigationDrawerDestination(
+          icon: Icon(item.icon), 
+          label: Text(item.title)
+        ))
       ],
     );
   }
