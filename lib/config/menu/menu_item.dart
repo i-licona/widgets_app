@@ -63,5 +63,11 @@ const appMenuItems = <MenuItem> [
     subTitle: 'Listas infinitas y pull to refresh',
     link: '/infinite-scroll',
     icon: Icons.list_alt_rounded
+  ),
+  MenuItem(
+    title: 'Counter Screen',
+    subTitle: 'Contador flutter',
+    link: '/counter',
+    icon: Icons.plus_one_rounded
   )
 ]; 
