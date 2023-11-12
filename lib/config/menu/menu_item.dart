@@ -69,5 +69,11 @@ const appMenuItems = <MenuItem> [
     subTitle: 'Contador flutter',
     link: '/counter',
     icon: Icons.plus_one_rounded
+  ),
+  MenuItem(
+    title: 'Change theme',
+    subTitle: 'Cambiar tema de la aplicación',
+    link: '/theme',
+    icon: Icons.color_lens_outlined
   )
 ]; 

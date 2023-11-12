@@ -1,6 +1,5 @@
 
 import 'package:go_router/go_router.dart';
-import 'package:widgets_app/presentation/screens/counter/counter_screen.dart';
 import 'package:widgets_app/presentation/screens/screens.dart';
 
 final appRouter = GoRouter(
@@ -55,6 +54,11 @@ final appRouter = GoRouter(
       name: CounterScreen.name,
       path: '/counter',
       builder: (context, state) => const CounterScreen(),
-    )
+    ),
+    GoRoute(
+      name: ThemeScreen.name,
+      path: '/theme',
+      builder: (context, state) => const ThemeScreen(),
+    ),
   ]
 );
